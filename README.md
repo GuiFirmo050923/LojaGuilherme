@@ -1,13 +1,21 @@
 <div align="center">
 
-# 🏪 LojaGuilherme — API de Produtos
+# 🛒 LojaGuilherme — API de Produtos
+
+**Uma API REST simples para gerenciamento de produtos, desenvolvida com PHP puro e PostgreSQL.**
+
+</div>
+
+<div align="center">
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-**Uma API REST simples para gerenciamento de produtos, desenvolvida com PHP puro e PostgreSQL.**
+</div>
+
+<div align="center">
 
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/GuiFirmo050923/LojaGuilherme?style=for-the-badge&color=blue)]()
@@ -16,30 +24,49 @@
 
 ---
 
-## 📋 Sobre o Projeto
+## 📚 Índice
+
+- [ℹ️ Sobre o Projeto](#-sobre-o-projeto)
+- [🚀 Funcionalidades](#-funcionalidades)
+- [🛠️ Tecnologias](#️-tecnologias)
+- [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+- [⚙️ Pré-requisitos](#️-pré-requisitos)
+- [📦 Instalação](#-instalação)
+- [📡 Uso da API](#-uso-da-api)
+- [🗄️ Schema do Banco de Dados](#️-schema-do-banco-de-dados)
+- [🔒 Segurança](#-segurança)
+- [📈 Roadmap](#-roadmap)
+- [👤 Autor](#-autor)
+- [📄 Licença](#-licença)
+
+---
+
+## ℹ️ Sobre o Projeto
 
 O **LojaGuilherme** é um backend REST API desenvolvido em PHP para cadastro e listagem de produtos. Utiliza **PDO** para conexão segura com o banco **PostgreSQL** e **prepared statements** para prevenir SQL Injection.
 
 ```
-┌─────────────────────────────────────────────┐
-│              CLIENTE (JSON)                 │
-│  ┌──────────┐        ┌──────────────┐       │
-│  │  POST 📦  │──────▶│ produtos.php  │       │
-│  │  GET  📋  │◀──────│  (endpoint)   │       │
-│  └──────────┘        └──────┬───────┘       │
-│                             │               │
-│                    ┌────────▼────────┐      │
-│                    │  conexao.php    │      │
-│                    │  (PDO + PgSQL)  │      │
-│                    └────────┬────────┘      │
-│                             │               │
-│                    ┌────────▼────────┐      │
-│                    │   PostgreSQL    │      │
-│                    │   ┌─────────┐   │      │
-│                    │   │ produtos │   │      │
-│                    │   └─────────┘   │      │
-│                    └─────────────────┘      │
-└─────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│                👤 CLIENTE (JSON)                │
+│                                                 │
+│   ┌──────────┐      POST👍      ┌────────────┐  │
+│   │   POST   │ ────────────────▶│            │  │
+│   │   GET    │ ◀────────────────│ produtos   │  │
+│   └──────────┘      GET📋        │   .php     │  │
+│                                 └─────┬──────┘  │
+│                                       │         │
+│                            PDO Conectar│        │
+│                                       ▼         │
+│                               ┌──────────────┐  │
+│                               │  conexao.php │  │
+│                               └──────┬───────┘  │
+│                                      │          │
+│                                      ▼          │
+│                               ┌──────────────┐  │
+│                               │  🗄️ PostgreSQL│  │
+│                               │  produtos    │  │
+│                               └──────────────┘  │
+└─────────────────────────────────────────────────┘
 ```
 
 ---
@@ -48,8 +75,8 @@ O **LojaGuilherme** é um backend REST API desenvolvido em PHP para cadastro e l
 
 | Método | Endpoint | Descrição | Body |
 |:------:|----------|-----------|------|
-| `GET` | `/produtos.php` | Lista todos os produtos | — |
-| `POST` | `/produtos.php` | Cadastra um novo produto | `{"nome": "...", "preco": 0.00}` |
+| 📋 `GET` | `/produtos.php` | Lista todos os produtos | — |
+| ➕ `POST` | `/produtos.php` | Cadastra um novo produto | `{"nome": "...", "preco": 0.00}` |
 
 ---
 
@@ -59,10 +86,10 @@ O **LojaGuilherme** é um backend REST API desenvolvido em PHP para cadastro e l
 
 | Tecnologia | Uso |
 |:----------:|-----|
-| **PHP** | Linguagem principal |
-| **PostgreSQL** | Banco de dados relacional |
-| **PDO** | Abstração de acesso ao banco |
-| **JSON** | Formato de comunicação |
+| **PHP** | 💻 Linguagem principal |
+| **PostgreSQL** | 🗄️ Banco de dados relacional |
+| **PDO** | 🔗 Abstração de acesso ao banco |
+| **JSON** | 📦 Formato de comunicação |
 
 </div>
 
@@ -72,9 +99,9 @@ O **LojaGuilherme** é um backend REST API desenvolvido em PHP para cadastro e l
 
 ```
 PRODUTOS-LOJA/
-├── 📄 conexao.php      # Conexão com o banco PostgreSQL (PDO)
-├── 📄 produtos.php     # Endpoint da API (GET/POST)
-└── 📄 README.md        # Este arquivo
+├── 📄 conexao.php      # 🔗 Conexão com o banco PostgreSQL (PDO)
+├── 📄 produtos.php     # 🚪 Endpoint da API (GET/POST)
+└── 📄 README.md        # 📖 Este arquivo
 ```
 
 ---
@@ -89,22 +116,22 @@ PRODUTOS-LOJA/
 
 </div>
 
-- PHP 7.4 ou superior com extensão `pdo_pgsql` habilitada
-- PostgreSQL 12 ou superior
-- Servidor web (Apache/Nginx) ou servidor embutido do PHP
+- ✅ PHP 7.4 ou superior com extensão `pdo_pgsql` habilitada
+- ✅ PostgreSQL 12 ou superior
+- ✅ Servidor web (Apache/Nginx) ou servidor embutido do PHP
 
 ---
 
 ## 📦 Instalação
 
-### 1. Clone o repositório
+### 1️⃣ Clone o repositório
 
 ```bash
 git clone https://github.com/GuiFirmo050923/LojaGuilherme.git
 cd LojaGuilherme
 ```
 
-### 2. Configure o banco de dados
+### 2️⃣ Configure o banco de dados
 
 Edite o arquivo `conexao.php` com as credenciais do seu PostgreSQL:
 
@@ -115,7 +142,7 @@ $banco    = "nome_do_banco";
 $senha    = "sua_senha";
 ```
 
-### 3. Crie a tabela no PostgreSQL
+### 3️⃣ Crie a tabela no PostgreSQL
 
 ```sql
 CREATE TABLE produtos (
@@ -125,7 +152,7 @@ CREATE TABLE produtos (
 );
 ```
 
-### 4. Inicie o servidor
+### 4️⃣ Inicie o servidor
 
 ```bash
 php -S localhost:8000
@@ -135,7 +162,7 @@ php -S localhost:8000
 
 ## 📡 Uso da API
 
-### Cadastrar um produto
+### ➕ Cadastrar um produto
 
 ```bash
 curl -X POST http://localhost:8000/produtos.php \
@@ -143,20 +170,20 @@ curl -X POST http://localhost:8000/produtos.php \
   -d '{"nome": "Camiseta", "preco": 59.90}'
 ```
 
-**Resposta:**
+**✅ Resposta:**
 ```json
 {
   "Mensagem": "Produto cadastrado com sucesso!"
 }
 ```
 
-### Listar todos os produtos
+### 📋 Listar todos os produtos
 
 ```bash
 curl http://localhost:8000/produtos.php
 ```
 
-**Resposta:**
+**✅ Resposta:**
 ```json
 [
   {
@@ -180,9 +207,9 @@ curl http://localhost:8000/produtos.php
 ┌──────────────────────────┐
 │         produtos         │
 ├──────────────────────────┤
-│  id       SERIAL (PK)    │
-│  nome     VARCHAR(255)   │
-│  preco    DECIMAL(10,2)  │
+│  🔊  id       SERIAL (PK) │
+│  📝  nome     VARCHAR(255)│
+│  💰  preco    DECIMAL(10,2)│
 └──────────────────────────┘
 ```
 
@@ -190,24 +217,25 @@ curl http://localhost:8000/produtos.php
 
 ## 🔒 Segurança
 
-- Utilização de **prepared statements** via PDO para prevenir **SQL Injection**
-- Validação do Content-Type para receber JSON
+- 🛡️ Utilização de **prepared statements** via PDO para prevenir **SQL Injection**
+- 📝 Validação do Content-Type para receber JSON
 - ⚠️ **IMPORTANTE:** Nunca commite suas credenciais de banco de dados no Git!
 
 ---
 
 ## 📈 Roadmap
 
-- [ ] Implementar método `PUT` para atualização de produtos
-- [ ] Implementar método `DELETE` para remoção de produtos
-- [ ] Adicionar validação de dados no lado do servidor
-- [ ] Implementar tratamento de erros com `try/catch`
-- [ ] Adicionar paginação nas listagens
-- [ ] Criar autenticação (JWT / API Key)
+- [x] 🏗️ Estrutura base da API (GET/POST)
+- [ ] ✏️ Implementar método `PUT` para atualização de produtos
+- [ ] 🗑️ Implementar método `DELETE` para remoção de produtos
+- [ ] 🧪 Adicionar validação de dados no lado do servidor
+- [ ] 🐛 Implementar tratamento de erros com `try/catch`
+- [ ] 📄 Adicionar paginação nas listagens
+- [ ] 🔐 Criar autenticação (JWT / API Key)
 
 ---
 
-## 👨‍💻 Autor
+## 👤 Autor
 
 **GuiFirmo050923**
 
